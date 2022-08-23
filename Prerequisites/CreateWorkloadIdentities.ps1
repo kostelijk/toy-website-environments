@@ -33,7 +33,7 @@ New-AzADAppFederatedCredential `
    -Subject "repo:$($githubOrganizationName)/$($githubRepositoryName):ref:refs/heads/main"
 
 # Create resource group for test and grant Contributor permissions to workload identity
-$testResourceGroup = New-AzResourceGroup -Name ToyWebsiteTest -Location westus3
+$testResourceGroup = New-AzResourceGroup -Name ToyWebsiteTest -Location westeurope
 
 New-AzADServicePrincipal -AppId $($testApplicationRegistration.AppId)
 New-AzRoleAssignment `
