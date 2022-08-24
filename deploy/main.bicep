@@ -51,7 +51,11 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   name: appServicePlanName
   location: location
   sku: environmentConfigurationMap[environmentType].appServicePlan.sku
+  properties: {
+    reserved: true
+  }
 }
+
 
 resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   name: appServiceAppName
